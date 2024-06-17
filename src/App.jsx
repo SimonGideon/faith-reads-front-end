@@ -1,12 +1,20 @@
-import "./App.css";
+import React from "react";
 import { Home } from "./components/Pages";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+  ]);
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
   );
-}
+};
 
 export default App;
